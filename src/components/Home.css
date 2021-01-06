@@ -1,0 +1,46 @@
+.home {
+  flex: 1;
+  padding: 30px 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  margin-top: 65px;
+}
+
+.home h1 {
+  color: #ff9e1b;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.home__addpub {
+  text-decoration: none;
+  border: 2px solid #ff9e1b;
+  background-color: #ff9e1b;
+  color: white;
+  padding: 5px 30px;
+  border-radius: 13px;
+  font-size: 18px;
+}
+
+.home__inputs {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.home__inputSearch,
+.home__inputSort {
+  border-color: orange;
+  font-size: 16px;
+  width: 468px;
+  padding: 5px;
+  outline: none;
+  box-shadow: none;
+  border-style: solid;
+}
+
+.home__inputSort {
+  width: 281px;
+  margin-left: 20px;
+}

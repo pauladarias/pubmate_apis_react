@@ -1,0 +1,8 @@
+.table__out {
+  border: 2px solid #ff9e1b;
+}
+
+.table__edit,
+.table__delete {
+  color: #ff9e1b;
+}

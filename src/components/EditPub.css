@@ -1,0 +1,72 @@
+.editpub {
+  flex: 1;
+  padding: 30px 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  margin-top: 65px;
+}
+
+.editpub h1 {
+  color: #ff9e1b;
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.editpub__buttonName,
+.editpub__buttonDescription {
+  border: 2px solid #ff9e1b;
+  background-color: #ff9e1b;
+  color: white;
+  padding: 6px;
+  width: 100%;
+  align-text: right;
+  /* padding-right: 500px; */
+  font-weight: 400;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.editpub__form {
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.editpub__input {
+  border-color: #ff9e1b;
+}
+
+.editpub__update {
+  border: 2px solid #ff9e1b;
+  background-color: #ff9e1b;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.editpub__cancel {
+  text-decoration: none;
+  border: 2px solid #ff9e1b;
+  background-color: white;
+  color: #ff9e1b;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.editpub__buttons {
+  margin-top: 20px;
+}
+
+.editpub__buttons_name {
+  width: 180px;
+}
+
+.editpub__buttons_description {
+  width: 300px;
+}

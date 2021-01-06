@@ -1,0 +1,11 @@
+.sidebar {
+  padding: 20px 20px;
+  flex: 0.33;
+  background: #ff9e1b;
+  display: flex;
+}
+
+.sidebar img {
+  height: 80px;
+  margin: 80px 90px;
+}
