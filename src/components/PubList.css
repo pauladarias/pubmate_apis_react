@@ -1,8 +1,16 @@
 .table__out {
   border: 2px solid #ff9e1b;
+  max-width: 50px;
+  border-radius: 3px;
 }
 
 .table__edit,
 .table__delete {
   color: #ff9e1b;
+}
+
+@media (min-width: 700px) {
+  .table__out {
+    max-width: 99%;
+  }
 }

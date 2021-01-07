@@ -1,9 +1,15 @@
 * {
   margin: 0;
 }
+
+html,
+body {
+  height: 100%;
+}
 .app {
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
   font-family: "Roboto", sans-serif;
+  overflow: scroll;
 }

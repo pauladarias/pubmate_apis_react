@@ -29,14 +29,14 @@ function AddPub() {
     })
   }
 
-  // useEffect(async()=> {
-  //   await postPub()
-  // }, [])
+  useEffect(async()=> {
+    await postPub()
+  }, [])
 
   const openForm = (formName) => {
     let i   
     let x = document.getElementsByClassName("form")
-    console.log(x)
+    // console.log(x)
     // for ( i = 0; i < x.length; i++) {
     //   x[i].style.display = "none"
     // }
@@ -47,23 +47,41 @@ function AddPub() {
   return (
     < div className="addpub">
       <h1>Pub Information</h1>
-      <div>
-        <button className="addpub__buttonName" onClick={openForm("name")}>Name and Adress<span className="arrow">▼</span></button>
-        <div id="Name"  className="form" style={{display: "none"}}>
-          <form lassName="addpub__form">
+      <div className="addpub__container">
+        <button className="addpub__buttonName" onClick={openForm("name")}>Pub Details<span className="arrow">▼</span></button>
+        <div id="Name"  className="form" style={{display: "block"}}>
+          <form className="addpub__form">
             <TextField className="addpub__input" name="name" label="Name" onChange={handleChange}/>
             <br />
-            <TextField className="addpub__input" name="address" label="Address" onChange={handleChange}/>
+            <TextField className="addpub__input" name="email" label="Email" onChange={handleChange}/>
             <br />
-            <TextField className="addpub__input" name="postcode" label="Postcode" onChange={handleChange}/>
+            <TextField className="addpub__input" name="phone" label="Phone" onChange={handleChange}/>
             <br />
-            <TextField className="addpub__input" name="timestamp" label="Time" onChange={handleChange}/>
+            <TextField className="addpub__input" name="telephone" label="Telephone" onChange={handleChange}/>
             <br />
             <div className="addpub__buttons addpub__buttons_name">
               <button className="addpub__save" onClick={postPub}>SAVE</button>
               <Link className="addpub__cancel" to="/">CANCEL</Link>
             </div>
           </form>
+          <div id="Address"  className="form__2" style={{display: "block"}}>
+          <form className="addpub__form addpub__form2">
+            <TextField className="addpub__input" name="line1" label="Address Line 1" onChange={handleChange}/>
+            <br />
+            <TextField className="addpub__input" name="line2" label="Address Line 2" onChange={handleChange}/>
+            <br />
+            <TextField className="addpub__input" name="line3" label="Address Line 3" onChange={handleChange}/>
+            <br />
+            <TextField className="addpub__input" name="county" label="County" onChange={handleChange}/>
+            <br />
+            <TextField className="addpub__input" name="postcode" label="Postcode" onChange={handleChange}/>
+            <br />
+            <div className="addpub__buttons addpub__buttons_name">
+              <button className="addpub__save" onClick={postPub}>SAVE</button>
+              <Link className="addpub__cancel" to="/">CANCEL</Link>
+            </div>
+          </form>
+        </div>
         </div>
       </div>
       
@@ -157,6 +175,9 @@ function AddPub() {
         </div>
       </div>
 
+
+
+      
 
 
     </div>

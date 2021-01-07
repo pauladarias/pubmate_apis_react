@@ -1,17 +1,25 @@
 .home {
   flex: 1;
-  padding: 30px 150px;
+  padding: 30px 30px;
   display: flex;
   flex-direction: column;
   justify-content: left;
   align-items: left;
-  margin-top: 65px;
+  margin-top: 20px;
 }
+
+/* .home {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 10px 30px;
+} */
 
 .home h1 {
   color: #ff9e1b;
   font-size: 35px;
   margin-bottom: 30px;
+  margin-top: 0;
 }
 
 .home__addpub {
@@ -20,27 +28,56 @@
   background-color: #ff9e1b;
   color: white;
   padding: 5px 30px;
-  border-radius: 13px;
+  border-radius: 3px;
   font-size: 18px;
 }
 
 .home__inputs {
   margin-top: 40px;
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .home__inputSearch,
 .home__inputSort {
   border-color: orange;
+  border-radius: 3px;
+  align-items: space-between;
   font-size: 16px;
-  width: 468px;
+  width: 200px;
   padding: 5px;
   outline: none;
   box-shadow: none;
   border-style: solid;
 }
 
+.home__inputSearch {
+  margin-bottom: 10px;
+}
+
 .home__inputSort {
-  width: 281px;
-  margin-left: 20px;
+  width: 200px;
+  /* margin-left: 10px; */
+}
+
+@media (min-width: 700px) {
+  .home {
+    padding: 30px 50px;
+  }
+
+  .home__inputs {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home__inputSearch,
+  .home__inputSort {
+    margin-right: 10px;
+    width: 100%;
+  }
+
+  .home__inputSort {
+    height: 18px;
+  }
 }
