@@ -22,19 +22,23 @@ function AddPub() {
   }
 
   const postPub=async()=> {
-    const response = await axios.post("http://dev.pubmate.io/pubmate/api/0.1/pub", addPub )
-    const data = response 
-    console.log(data)
-    // .then( 
-    //   response=>{
-    //   console.log(response
-    //setAddPub(data.concat(response.data))
-  
+    await axios.post("http://dev.pubmate.io/pubmate/api/0.1/pub", addPub )
+    .then( 
+      response=>{
+      console.log(response)
+
+      const newData = { name: "Paula", email: "paula@mail.com", phone: 4555, group: "The local pub"}
+      setAddPub({ ...addPub, ...newData})
+      //setAddPub(data.concat(response.data))
+    })
     
   }
 
-  useEffect(async()=> {
-    await postPub()
+//   const newData = // pluck your fields from response.data here into an object with the same format as state data, e.g. { name: 'John', email: 'john@john.com', ... }
+// setAddPub({...addPub, ...newData})
+
+  useEffect(()=> {
+    (async () => await postPub())()
   }, [])
 
 
@@ -57,13 +61,13 @@ function AddPub() {
         <button className="addpub__buttonName" onClick={openForm("name")}>Pub Details<span className="arrow">▼</span></button>
         <div id="Name"  className="form" style={{display: "block"}}>
           <form className="addpub__form">
-            <TextField className="addpub__input" value={addPub.name} name="name" label="Name" onChange={handleChange}/>
+            <TextField className="addpub__input" value={addPub.name} name="name" label="Name" onChange={(e) => handleChange(e) }/>
             <br />
-            <TextField className="addpub__input" value={addPub.email} name="email" label="Email" onChange={handleChange}/>
+            <TextField className="addpub__input" value={addPub.email} name="email" label="Email" onChange={(e) => handleChange(e) }/>
             <br />
-            <TextField className="addpub__input" value={addPub.phone} name="phone" label="Phone" onChange={handleChange}/>
+            <TextField className="addpub__input" value={addPub.phone} name="phone" label="Phone" onChange={(e) => handleChange(e) }/>
             <br />
-            <TextField className="addpub__input" value={addPub.group} name="group" label="Group" onChange={handleChange}/>
+            <TextField className="addpub__input" value={addPub.group} name="group" label="Group" onChange={(e) => handleChange(e) }/>
             <br />
             <div className="addpub__buttons addpub__buttons_name">
               <button className="addpub__save" onClick={postPub}>SAVE</button>
