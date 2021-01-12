@@ -64,14 +64,18 @@
 }
 
 .addpub__form {
+  font-family: "Roboto", sans-serif;
   margin-left: 15px;
   margin-top: 20px;
   margin-bottom: 30px;
 }
 
 .addpub__input {
-  border-color: #ff9e1b;
-  width: 95%;
+  width: 40%;
+  border: 1px solid #ff9e1b;
+  height: 25px;
+  margin-bottom: 10px;
+  margin-top: 3px;
 }
 
 .addpub__save {
@@ -79,23 +83,23 @@
   background-color: #ff9e1b;
   color: white;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 12px;
   margin-right: 10px;
 }
 
 .addpub__cancel {
   text-decoration: none;
-  border: 2px solid #ff9e1b;
+  border: 1px solid #ff9e1b;
   background-color: white;
   color: #ff9e1b;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: 12px;
 }
 
 .addpub__buttons {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
