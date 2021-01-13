@@ -5,6 +5,8 @@ import SideBar from "./components/SideBar"
 import Home from "./components/Home"
 import AddPub  from "./components/AddPub"
 import EditPub  from "./components/EditPub"
+import AddUser  from "./components/AddUser"
+import UserList from "./components/UserList"
 
 
 
@@ -15,8 +17,10 @@ function App() {
         <SideBar />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/add" component={AddPub} />
-          <Route path="/edit/:id" component={EditPub} />
+          <Route path="/addpub" component={AddPub} />
+          <Route path="/editpub/:id" component={EditPub} />
+          <Route path="/adduser" component={AddUser} />
+          <Route path="/userlist" component={UserList} />
         </Switch>
 
       </Router>

@@ -26,20 +26,7 @@ function AddPub () {
       .then( 
         response=>{
         console.log(response.config.data)
-
-
-
-      // const response = await fetch("http://dev.pubmate.io/pubmate/api/0.1/pub", {
-      //   method: "POST", 
-      //   headers: {
-      //     "Content-type" : "application/json"
-      //   },
-      //   body: {
-      //     email: fields.email,
-      //     password: fields.password
-      //   }
        })
-      //const data = await response.json()
       console.log(response)
     } catch(err) {
       console.log(err)
@@ -96,7 +83,7 @@ return (
         block
         size="lg"
         type="submit"
-        disabled={!validateForm()}
+        //disabled={!validateForm()}
       >
         SAVE
       </Button>

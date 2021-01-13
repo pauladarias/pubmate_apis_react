@@ -20,6 +20,7 @@ function PubList() {
     await getPubs()
   }, [])
 
+
   // useEffect(()=> {
   //   async function fetchData() {
   //     const request = await axios.get("pubmate/api/0.1/pub/2/all")
