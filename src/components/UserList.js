@@ -1,74 +1,51 @@
-import React, { useState, useEffect } from 'react'
-import "./UserList.css"
-import { Link } from "react-router-dom"
-import axios from "../axios"
-import { Table, TableContainer, TableHead, TableCell, TableBody, TableRow } from "@material-ui/core"
-import { Edit, Delete } from "@material-ui/icons"
+import React, { Component } from 'react';
 
-function UserList() {
-  const [users, setUsers] = useState([])
 
-  const getUsers=async()=> {
-    await axios.get("http://dev.pubmate.io/pubmate/api/0.1/user/all")
-    .then(response=>{
-      console.log(response)
-      console.log(response.data[0].email)
-      console.log(response.data.email)
-      setUsers(response.data.user)
-    })
-    console.log(users)
+class UserList extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      users: [],
+      isLoaded: false,
+    }
   }
 
-  useEffect(async()=> {
-    await getUsers()
-  }, [])
+  componentDidMount() {
 
+    fetch("http://dev.pubmate.io/pubmate/api/0.1/user/all")
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          isLoaded: true, 
+          users: json,
+        })
+      })
+  }
 
-  return (
-    <div className="table">
-    <TableContainer>
-      <Table className="table__out">
-        <TableHead>
-          <TableRow>
-            <TableCell>Email</TableCell>
-            <TableCell>Date Modified</TableCell>
-            <TableCell>Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        {/* <TableBody>
-        <TableRow key={users.data[0].id}>
-              <TableCell>{users.data[0].email}</TableCell>
-              <TableCell>{users.data[0].timestamp}</TableCell>
-              <TableCell>
-              <Edit className="table__edit"/>
-              &nbsp;&nbsp;&nbsp;
-              <Delete  className="table__delete"/>
-            </TableCell>
-            </TableRow>
-        </TableBody> */}
+  render() {
 
-        {/* <TableBody>
-          {users.map(user =>(
-            <TableRow key={user.id}>
-              <TableCell>{user.email}</TableCell>
-              <TableCell>{user.timestamp}</TableCell>
-              <TableCell>
-              <Edit className="table__edit"/>
-              &nbsp;&nbsp;&nbsp;
-              <Delete  className="table__delete"/>
-            </TableCell>
-            </TableRow>
-          ))}
-        </TableBody> */}
+    let { isLoaded, users } = this.state
 
+    if (!isLoaded) {
+      return <div>Loading...</div>
+    } else {
+      return (
+        <div className="userlist">
+          Data is been loaded
+          <ul>
+            {users.map(user => {
+              <li key={user.id}>
+                {user.data.name}
+              </li>
+            })}
+          </ul>
+        </div>
+      )
 
+    }
 
-
-      </Table>
-    </TableContainer>
-
-    </div>
-  )
+  }
 }
 
 export default UserList

@@ -14,6 +14,7 @@ function PubList() {
       console.log(response)
       setPubs(response.data.pub)
     })
+
   }
 
   useEffect(async()=> {
