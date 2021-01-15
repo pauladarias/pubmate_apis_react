@@ -12,16 +12,24 @@ class UserList extends Component {
   }
 
   componentDidMount() {
-
-    fetch("http://dev.pubmate.io/pubmate/api/0.1/user/all")
-      .then(res => res.json())
-      .then(json => {
-        this.setState({
-          isLoaded: true, 
-          users: json,
-        })
-      })
+    this.loadData()
   }
+
+  loadData = async () => {
+    const response = await fetch('http://dev.pubmate.io/pubmate/api/0.1/user/all')
+    if (response) {
+      const allusers = await response.json() 
+      console.log(response)
+      console.log(allusers)
+      console.log(allusers[0].email)
+      this.setState({
+        isLoaded: true,
+        users: [...allusers]
+
+      })
+    }
+  }
+
 
   render() {
 
@@ -34,11 +42,11 @@ class UserList extends Component {
         <div className="userlist">
           Data is been loaded
           <ul>
-            {users.map(user => {
+            {users.map(user => (
               <li key={user.id}>
-                {user.data.name}
+                {user.email}
               </li>
-            })}
+            ))}
           </ul>
         </div>
       )
@@ -49,3 +57,6 @@ class UserList extends Component {
 }
 
 export default UserList
+
+
+

@@ -6,11 +6,14 @@ class App extends Component {
        this.handleChange = this.handleChange.bind(this);
        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleChange(event) {    this.setState({[event.target.name]: event.target.value});  }
+
+    handleChange(event) { 
+      this.setState({[event.target.name]: event.target.value}); 
+    }
+
     handleSubmit(event) {
 		let data = this.state;
 		let url = 'http://dev.pubmate.io/pubmate/api/0.1/user/create';
-		// let url = 'http://localhost:2525/pubmate/api/0.1/user/create';
 	    const requestOptions = {
 	           method: 'POST',
 	           headers: { 'Content-Type': 'application/json' },
