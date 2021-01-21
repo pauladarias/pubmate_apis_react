@@ -2,39 +2,38 @@ import React, { Component } from 'react';
 class App extends Component {
     constructor(props) {
        super(props);
-	   this.state = {};
+       this.state = {};
        this.handleChange = this.handleChange.bind(this);
        this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    handleChange(event) { 
-      this.setState({[event.target.name]: event.target.value}); 
-    }
-
+    handleChange(event) {    this.setState({[event.target.name]: event.target.value});  }
+    
     handleSubmit(event) {
-		let data = this.state;
-		let url = 'http://dev.pubmate.io/pubmate/api/0.1/user/create';
-	    const requestOptions = {
-	           method: 'POST',
-	           headers: { 'Content-Type': 'application/json' },
-	           body: JSON.stringify(data)
-	       };
-	       fetch(url, requestOptions)
-	           .then(async response => {
-	               const data = await response.json();
-	               // check for error response
-	               if (!response.ok) {
-	                   // get error message from body or default to response status
-	                   const error = (data && data.message) || response.status;
-	                   return Promise.reject(error);
-	               }
-	               this.setState({ postId: data.id })
-	           })
-	           .catch(error => {
-	               this.setState({ errorMessage: error.toString() });
-	               console.error('There was an error!', error);
-	           });
-	 }
+        let data = this.state;
+        let url = 'http://dev.pubmate.io/pubmate/api/0.1/user';
+        // let url = 'http://localhost:2525/pubmate/api/0.1/user/create';
+        const requestOptions = {
+               method: 'POST',
+               headers: { 'Content-Type': 'application/json' },
+               body: JSON.stringify(data)
+           };
+           fetch(url, requestOptions)
+               .then(async response => {
+                   const data = await response.json();
+                   console.log(data)
+                   // check for error response
+                   if (!response.ok) {
+                       // get error message from body or default to response status
+                       const error = (data && data.message) || response.status;
+                       return Promise.reject(error);
+                   }
+                   this.setState({ postId: data.id })
+               })
+               .catch(error => {
+                   this.setState({ errorMessage: error.toString() });
+                   console.error('There was an error!', error);
+               });
+     }
   render() {
     return (
     <div className="wrapper">
@@ -58,10 +57,10 @@ class App extends Component {
            <p>Type</p>
            <input name="type" value={this.state.type} onChange={this.handleChange}/>
          </label>
-       </fieldset>	  
+       </fieldset>      
         <button type="submit">Submit</button>
       </form>
-		</div>
+        </div>
     );
   }
 }
