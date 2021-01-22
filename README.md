@@ -16,3 +16,17 @@ http://dev.pubmate.io/
 
 TO run:
 npm i react-router
+
+---
+
+Docker:
+
+git clone https://github.com/pubmate/genesis
+
+docker-compose up --build
+
+localhost:4050
+
+---
+
+docker-compose -f docker_compose_dev.yml build --force-rm --no-cache web
