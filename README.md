@@ -33,6 +33,9 @@ docker-compose -f docker_compose_dev.yml build --force-rm --no-cache web
 
 ---
 
+SH
+
+./build-dev.sh
 ./run-dev.sh
 
 ---
