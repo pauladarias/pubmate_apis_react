@@ -33,6 +33,10 @@ docker-compose -f docker_compose_dev.yml build --force-rm --no-cache web
 
 ---
 
+./run-dev.sh
+
+---
+
 AWS
 
 url and localhost:
@@ -40,3 +44,5 @@ http://ec2-18-133-183-86.eu-west-2.compute.amazonaws.com:4050/pubmate/api/0.1/us
 
 ssh command:
 ssh -i “qa-staging.pem” ec2-user@ec2-18-133-183-86.eu-west-2.compute.amazonaws.com
+
+---
