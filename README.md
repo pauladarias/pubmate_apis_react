@@ -38,6 +38,8 @@ SH
 ./build-dev.sh
 ./run-dev.sh
 
+-To run on localhost:4050
+
 ---
 
 AWS
