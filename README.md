@@ -51,3 +51,8 @@ ssh command:
 ssh -i “qa-staging.pem” ec2-user@ec2-18-133-183-86.eu-west-2.compute.amazonaws.com
 
 ---
+
+GET: http://localhost:4050/pubmate/api/0.1/pub/all
+POST: http://localhost:4050/pubmate/api/0.1/pub
+PUT: http://localhost:4050/pubmate/api/0.1/pub
+DELETE: http://localhost:4050/pubmate/api/0.1/pub/6
