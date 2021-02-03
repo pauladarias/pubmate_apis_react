@@ -1,7 +1,12 @@
 .table__out {
-  border: 2px solid #ff9e1b;
-  max-width: 50px;
-  border-radius: 3px;
+  /* border: 2px solid #ff9e1b;
+  border-radius: 3px; */
+  overflow-x: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  padding: 10px;
+  margin: 10px;
 }
 
 .table__edit,
@@ -11,6 +16,6 @@
 
 @media (min-width: 700px) {
   .table__out {
-    max-width: 99%;
+    max-width: 100%;
   }
 }

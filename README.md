@@ -40,6 +40,8 @@ SH
 
 -To run on localhost:4050
 
+- Always build after pull
+
 ---
 
 AWS
